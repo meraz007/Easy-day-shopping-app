@@ -15,7 +15,7 @@
           <router-link class="nav-link btn btn-outline-success" :to="{path:'/signup'}">Sign Up</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-outline-success" href="#">Log In</a>
+          <router-link class="nav-link btn btn-outline-success" :to="{path:'/login'}">Log In</router-link>
         </li>
       </ul>
     </div>

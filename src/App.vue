@@ -11,22 +11,13 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Cart from './components/Cart.vue'
-import data from './Data/data.js'
 export default {
   components:{
     Navbar,
     Cart,
-  },
-  data(){
-    return{
-      items:[],
-      cart:[],
-    }
+    
   },
   
-  mounted(){
-    this.items=data
-  }
 }
 </script>
 

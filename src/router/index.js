@@ -4,6 +4,7 @@ import Inventory from "../views/Inventory.vue";
 import Item from "../views/ItemDeatils.vue";
 import Checkout from "../views/checkout.vue";
 import SignUp from "../views/SignUp.vue"
+import Login from "../views/login.vue"
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/signup",
     name: "SignUp",
     component: SignUp,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
   },
 ];
 
