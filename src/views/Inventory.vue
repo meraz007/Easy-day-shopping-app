@@ -17,11 +17,12 @@
 </template>
 
 <script>
-import axios from 'axios'
+//import axios from 'axios'
+import SourceData from '../Data/data.json'
 export default {
     data(){
         return{
-          
+          data:SourceData.products
         }
     },
     computed:{
@@ -38,10 +39,7 @@ export default {
             this.counter +=1
         },
         fetchInventory(){
-          var self=this
-          axios.get('http://localhost:3000/items').then(response =>{
-            self.$store.commit('setInventory',response.data)
-          })
+         this.$store.commit('setInventory',this.data)
         }
     }
 

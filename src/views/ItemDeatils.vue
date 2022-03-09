@@ -16,23 +16,24 @@
 </template>
 
 <script>
-import axios from 'axios'
+//import axios from 'axios'
+import SourceData from '../Data/data.json'
 export default {   
     data(){
         return{
-            item :null
+            data:SourceData.products
         }
     },
-    mounted(){
-        this.fetchItemDeatils()
+    computed:{
+        itemId(){
+           return parseInt(this.$route.params.id)
+        },
+        item(){
+            return SourceData.products.find(item =>item.id===this.itemId)
+        }
     },
     methods:{
-        fetchItemDeatils(){
-            var self=this
-            axios.get('http://localhost:3000/item/'+ this.$route.params.id).then(response =>{
-            self.item=response.data
-            })
-        },
+        
         addItem(item){
             this.$store.commit('addToCart',item)
         },
